@@ -1,0 +1,198 @@
+/* ------------------------------------------------------------set variables----------------------------------------------------------- */
+
+:root {
+    --mainFont: 'Racing Sans One', cursive;
+    --mainFontSize: clamp(1.5rem, 2.1vw, 2vh);
+    --btnWidth: clamp(5em, 2vw, 10em);
+    --btnHeight: clamp(2em, 1vw, 2em);
+    --white: #ffffff;
+    --black: rgba(0, 0, 0, 0.82);
+    --darkOrange: rgb(234, 92, 76);
+    --grey: rgba(243, 243, 243, 0.4);
+}
+
+
+/* ---------------------------------------------------------------reset css------------------------------------------------------------ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*------------------------------------------------------------------ body---------------------------------------------------------------*/
+
+body {
+    font-family: var(--mainFont);
+    font-size: var(--mainFontSize)
+}
+
+
+/* ---------------------------------------------------------------container------------------------------------------------------------ */
+
+.container {
+    background: var(--black) url("../assets/bg\ tomato.jpg") no-repeat center;
+    background-size: auto 120vh;
+    width: 100%;
+    height: 110vh;
+}
+
+
+/* ----------------------------------------------------------------modal -------------------------------------------------------------- */
+
+.modalInfo {
+    position: absolute;
+    width: 80%;
+    max-width: 500px;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    margin-top: 3em;
+    padding: 2em;
+    font-size: clamp(0.7rem, 1.85vh, 90%);
+    background: var(--black);
+    color: var(--white);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--darkOrange);
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 2;
+    flex: 1;
+}
+
+.modalInfo .header {
+    justify-content: space-between;
+}
+
+.modalInfo ol {
+    padding: 3em 1em;
+}
+
+.modalInfo ol li {
+    line-height: 1.5em;
+    padding: 0.5em 0;
+}
+
+.modalInfo p {
+    text-align: center;
+}
+
+.modalInfo p a {
+    color: var(--darkOrange);
+    text-decoration: none;
+}
+
+
+/*------------------------------------------------------ style pomodoro timmer--------------------------------------------------------- */
+
+.pomodoroApp {
+    width: 80%;
+    max-width: 500px;
+    min-height: 80%;
+    background: var(--grey);
+    backdrop-filter: blur(5px);
+    padding-top: 2em;
+}
+
+.pomodoroTimmer {
+    width: calc(8rem + 5vw);
+    height: calc(8rem + 5vw);
+    gap: 0.5em;
+    background: linear-gradient(180deg, #EDE3E3 0%, rgba(141, 72, 72, 0) 100%);
+}
+
+.pomodoroCycle {
+    width: 80%;
+    padding: 5% 0;
+    margin: 1em 0;
+    flex-wrap: wrap;
+    gap: calc(0.2em + 0.5vw)
+}
+
+.pomodoroCycle img {
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+}
+
+.pomodoroControls>button {
+    height: var(--btnHeight);
+    width: var(--btnWidth);
+    background: linear-gradient(180deg, #F5D89F 0%, var(--black) 100%);
+    border: none;
+    margin: 0.5em 0;
+    font-family: var(--mainFont);
+    font-size: var(--mainFontSize);
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(180deg, var(--darkOrange) 0%, var(--black) 100%);
+    color: var(--white);
+}
+
+button:active {
+    background-color: var(--darkOrange);
+    transform: translateY(4px);
+}
+
+
+/* --------------------------------------------------------------info btn-------------------------------------------------------------- */
+
+.pomodoroInfoIcon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.2em 0.5em;
+}
+
+
+/* --------------------------------------------------------show/hide elements---------------------------------------------------------- */
+
+.activeModalInfo {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.activePomodoroControls {
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------same style for multiples elements------------------------------------------------ */
+
+.alignCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alignCenterColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bRadius {
+    border-radius: 15px;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+
+/* ------------------------------------------------------------media------------------------------------------------------------------- */
+
+@media only screen and (min-width: 768px) {
+    .pomodoroControls {
+        flex-direction: row;
+        gap: 0.5rem
+    }
+    .pomodoroCycle {
+        padding: 7% 0;
+        margin: 1em 0;
+    }
+}
