@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href='../src/style/style.css'>
+    <link rel="stylesheet" href='./style/style.css'>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
 
         <div class="modalInfo bRadius">
             <div class="header alignCenter">
-                <h1>Pomodoro Rulls</h1>
+                <h2>Pomodoro Rulls</h2>
                 <input id="closeModal" class="circle" type="image" src="./assets/cancel-64.svg" width="25px" height="25px" alt="close info" />
             </div>
             <ol>
@@ -33,6 +33,7 @@
         </div>
 
         <div class="pomodoroApp alignCenterColumn bRadius">
+            <h1>Pomodoro Timmer</h1>
             <div class="pomodoroTimmer alignCenter circle">
                 <p class="minutes">25</p>
                 <p>:</p>
@@ -41,9 +42,9 @@
             <div class="pomodoroCycle alignCenter">
             </div>
             <div class="pomodoroControls alignCenterColumn">
-                <button id="startTimmer" class="bRadius">Start</button>
-                <button id="stopTimmer" class="bRadius">Stop</button>
-                <button id="resetTimmer" class="bRadius">Reset</button>
+                <button id="startTimmer" class="bRadius" title="or press ENTER">Start</button>
+                <button id="stopTimmer" class="bRadius" title="or press SPACEBAR">Stop</button>
+                <button id="resetTimmer" class="bRadius" title="or press BACKSPACE">Reset</button>
             </div>
             <div class="pomodoroInfoIcon">
                 <input id="openModal" class="circle" type="image" src="./assets/information-button.png" width="25px" height="25px" alt="pomodoro info" />
@@ -52,8 +53,8 @@
 
     </div>
 
-    <script src="../src/script/script.js"></script>
-    <script src="../src/script/displayInfo.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/displayInfo.js"></script>
 </body>
 
 </html>
